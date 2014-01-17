@@ -283,7 +283,7 @@ advancedruby_tree.visit_all { |node| p node.node_name }
 def grep(search, filename)
   regexp = Regexp.new(search)
   File.foreach(filename).with_index { |line, line_number|
-    puts "#{line_number}: #{line}" if regexp =~ line
+    puts "#{line_number+1}: #{line}" if regexp =~ line
   }
 end
 
